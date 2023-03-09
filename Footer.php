@@ -12,20 +12,18 @@ $msg= "<h4 style='color:green;'>feedback sent successfully</h4>";
 <footer style="background-color: #393939;">
     <div class="container-fluid">
 	<div class="col-sm-4 hov">
-		<img src="logo/logo2.png"width="200px"height="50px"/><br><br>
+		<img src="logo/logo12.png"width="220px"height="70px"/><br><br>
     <p class="text-justify">A hotel is an establishment that provides paid lodging on a short-term basis. Facilities provided may range from a modest-quality mattress in a small room to large suites with bigger, higher-quality beds, a dresser, a refrigerator and other kitchen facilities, upholstered chairs, a flat screen television, and en-suite bathrooms. Small, lower-priced hotels may offer only the most basic guest services and facilities. Larger, higher-priced hotels may provide additional guest facilities such as a swimming pool, business center</p><br>
-      <center><a href="about.php" class="btn btn-danger"><b>Read More..</b></a></center><br><br><br>
- <?php
-  include('Social ican.php')
-?>
+      <center><a href="about.php" class="btn btn-info"><b>Read More..</b></a></center><br><br><br>
+ 
 	</div>&nbsp;&nbsp;
 	<div class="col-sm-4 text-justify">
 	       <h3 style="color:#cdd51f;">Contact Us</h3>
       <p style="color:white;"><strong>Address:&nbsp;</strong>Sector,59 Mamura Chowk,Noida</p>
-      <p style="color:white;"><strong>Email-Id:&nbsp;</strong>hotal@gmail.com</p>
-      <p style="color:white;"><strong>Contact Us:&nbsp;</strong>(+91) 7275308190</p><br><br><br>
-      
-     <center><img src="image/devlop/img2.png"class="img-responsive"style="width:200px;height:150px;border-radius:100%;"></center>
+      <p style="color:white;"><strong>Email-Id:&nbsp;</strong>E&M@gmail.com</p>
+      <p style="color:white;"><strong>Contact Us:&nbsp;</strong>(+254)713131313</p><br><br><br>
+
+     <!-- <center><img src="image/devlop/img2.png"class="img-responsive"style="width:200px;height:150px;border-radius:100%;"></center> -->
 	</div>&nbsp;
 
   <!--Feedback Start Here-->
@@ -46,7 +44,7 @@ $msg= "<h4 style='color:green;'>feedback sent successfully</h4>";
           <input type="Number" name="mob" class="form-control" id="#"placeholder="Mobile Number"required>
         </div>
         <div class="form-group">
-          <textarea type="Text" name="msg" class="form-control" id="#"placeholder="Type Your Massage"required></textarea>
+          <textarea type="Text" name="msg" class="form-control" id="#"placeholder="Type comment here"required></textarea>
         </div>
           <input type="submit" value="send" name="send" class="btn btn-primary btn-group-justified"required>
       </form>     
@@ -64,7 +62,7 @@ $msg= "<h4 style='color:green;'>feedback sent successfully</h4>";
 <!--Footer2 start Here-->
 
 <footer class="container-fluid text-center"style="background-color:#000408;height:40px;padding-top:10px;color:#f0f0f0;">
-  <p>Develope By AmitVish@ | All Rights Reserved 2019</p>
+  <p>E & M HOTEL All Rights Reserved 2019</p>
 </footer>
 
 <!--Footer2 start Here-->

@@ -16,7 +16,7 @@
       include('Menu Bar.php')
   ?><br><br><br>
 	<div class="container-fluid"style="margin-top:2%;">
-		<div class="continer">
+		<div class="container">
 			<div class="row">
 				<div class="col-sm-2"></div>
 				<div class="col-sm-7">
@@ -34,27 +34,27 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
     <div class="item active">
-      <img src="image/Delux Room Single Bed Ac Room/img1.jpg"class="thumbnail" alt="img1">
+      <img src="image/Delux-Room-Single-Bed-Ac-Room/delux_img1.jpg"class="img-responsive rounded mx-auto d-block" alt="img1">
     </div>
 
     <div class="item">
-      <img src="image/Delux Room Single Bed Ac Room/img2.jpg"class="thumbnail" alt="im2">
+      <img src="image/Delux-Room-Single-Bed-Ac-Room/delux_img2.jpg"class="" alt="im2">
     </div>
 
     <div class="item">
-       <img src="image/Delux Room Single Bed Ac Room/img3.jpg"class="thumbnail" alt="im3">
+       <img src="image/Delux-Room-Single-Bed-Ac-Room/delux_img3.jpg"class="" alt="im3">
     </div>
 
     <div class="item">
-       <img src="image/Delux Room Single Bed Ac Room/img4.jpg"class="thumbnail" alt="img4">
+       <img src="image/Delux-Room-Single-Bed-Ac-Room/delux_img4.jpg"class="" alt="img4">
     </div>
 
     <div class="item">
-       <img src="image/Delux Room Single Bed Ac Room/img5.jpg"class="thumbnail" alt="img5">
+       <img src="image/Delux-Room-Single-Bed-Ac-Room/delux_img5.jpg"class="" alt="img5">
     </div>
 
     <div class="item">
-       <img src="image/Delux Room Single Bed Ac Room/img7.jpg"class="thumbnail" alt="img7">
+       <img src="image/Delux-Room-Single-Bed-Ac-Room/delux_img7.jpg"class="" alt="img7">
     </div>
   </div>
 
@@ -75,15 +75,16 @@ $sql=mysqli_query($con,"select * from rooms where room_id='$room_id' ");
 $res=mysqli_fetch_assoc($sql);
 ?>
 
-		<h2 class="Ac_Room_Text"><?php echo $res['type']; ?></h2>
-    <h3 class="Ac_Room_Text"><?php echo $res['price']; ?></h3>
+<br>
+		<h2 class=""><font color="#000000;" ><?php echo $res['type']; ?></font></h2>
+    <!-- <h3 class=""><font color="#000000;" >KSH <?php echo $res['price']; ?> per night</font></h3> -->
 		<p class="text-justify">
       <?php echo $res['details']; ?>
 </p>
     <div class="row">
       <h2>Amenities & Facilities</h2>
       <img src="image/icon/wifi.png"class="img-responsive">
-      <a href="Login.php" class="btn btn-danger">Book Now</a><br><br>
+      <a href="Login.php" class="btn btn-info">Book Now</a><br><br>
       </div>
 	</div>
 				<div class="col-sm-3">

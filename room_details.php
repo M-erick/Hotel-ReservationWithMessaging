@@ -77,7 +77,7 @@ $res=mysqli_fetch_assoc($sql);
 
 <br>
 		<h2 class=""><font color="#000000;" ><?php echo $res['type']; ?></font></h2>
-    <!-- <h3 class=""><font color="#000000;" >KSH <?php echo $res['price']; ?> per night</font></h3> -->
+    <p class=""><font color="#000000;" >KSH <?php echo $res['price']; ?> per night</font></p>
 		<p class="text-justify">
       <?php echo $res['details']; ?>
 </p>

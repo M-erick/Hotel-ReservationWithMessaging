@@ -19,7 +19,7 @@ $msg= "<h4 style='color:green;'>feedback sent successfully</h4>";
 	</div>&nbsp;&nbsp;
 	<div class="col-sm-4 text-justify">
 	       <h3 style="color:#cdd51f;">Contact Us</h3>
-      <p style="color:white;"><strong>Address:&nbsp;</strong>Sector,59 Mamura Chowk,Noida</p>
+      <p style="color:white;"><strong>Address:&nbsp;</strong>RNG PALAZA,CBD,NAIROBI</p>
       <p style="color:white;"><strong>Email-Id:&nbsp;</strong>E&M@gmail.com</p>
       <p style="color:white;"><strong>Contact Us:&nbsp;</strong>(+254)713131313</p><br><br><br>
 

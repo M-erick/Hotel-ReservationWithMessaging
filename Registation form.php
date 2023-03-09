@@ -23,7 +23,7 @@ if(isset($save))
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Online Hotel.Com</title>
+  <title>E & M Hotel</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -37,10 +37,10 @@ if(isset($save))
   <?php 
 include('Menu Bar.php');
   ?>
-<div class="container-fluid"style="background-color:#4286f4;color:#000;"> <!-- Primary Id-->
+<div class="container-fluid"style="background-color:;color:#000;"> <!-- Primary Id-->
   <div class="container">
     <div class="row">
-      <center><h1 style="background-color:#ed2553; border-radius:50px;display:inline-block;"><b><font color="#080808">Create New Account?</font></b></h1></center>
+      <center><h1 style="background-color:; border-radius:50px;display:inline-block;"><b><font color="#080808">Create New Account</font></b></h1></center>
        <center><?php echo @$msg;?></center><br>
       <div class="col-sm-2"></div>
       <div class="col-sm-6 ">
@@ -94,9 +94,9 @@ include('Menu Bar.php');
             <div class="control-label col-sm-5"><h4>Country :</h4></div>
           <div class="col-sm-7">
             <select name="countr" class="form-control"required>
-              <option>India</option>
-              <option>Pakistan</option>
-              <option>China</option>
+              <option>Kenya</option>
+              <option>Uganda</option>
+              <option>Tanzania</option>
             </select>
         </div>
         </div>
@@ -120,8 +120,6 @@ include('Menu Bar.php');
     </div>
   </div>
 </div>
-<?php
-    include('Footer.php')
-?>
+
 </body>
 </html>

@@ -6,7 +6,7 @@ include('connection.php');
 <!DOCTYPE html>
 <html lang="en">
 <head><!--Head Open  Here-->
-  <title>Online Hotel.Com</title>
+  <title>E & M Hotel</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -81,9 +81,9 @@ include('connection.php');
     
 </div> <!--Room Info Start Here-->
 
- <div class="container-fluid"id="red"><!--Id Is Red--> 
+ <div class="container-fluid"><!--Id Is Red--> 
 <div class="container text-center">    
-  <h1>Welcome To <font color="#a6e22b;"><b>Online Hotel.Com</b></font></h1><hr><br>
+  <h1> <font color="#d4b71c;"><b> Welcome To E &M</b></font></h1><br>
   <div class="row">
     <div class="hov"><!--Hov is Class-->
     
@@ -97,7 +97,7 @@ include('connection.php');
       <img src="image/rooms/<?php echo $r_res['image']; ?>"class="img-responsive thumbnail"alt="Image"id="img1"> <!--Id Is Img-->
       <h4 class="Room_Text">[ <?php echo $r_res['type']; ?>]</h4>
       <p class="text-justify"><?php echo substr($r_res['details'],0,100); ?></p><br>
-	    <a href="room_details.php?room_id=<?php echo $r_res['room_id']; ?>" class="btn btn-danger text-center">Read more</a><br><br>
+	    <a href="room_details.php?room_id=<?php echo $r_res['room_id']; ?>" class="btn btn-info text-center">Read more</a><br><br>
     </div>
 	<?php } ?>
   </div>

@@ -1,5 +1,6 @@
 <?php 
 session_start();
+// errors here when a user access a page without login
 $eid=$_SESSION['create_account_logged_in'];
 error_reporting(1);
 ?>
@@ -13,7 +14,7 @@ error_reporting(1);
         <span class="icon-bar"></span>                        
       </button>
 
-      <img src="logo/logo12.png"/width="180px"height="50px"style="margin-top:5px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <img src="logo/logo12.png"/width="150px"height="60px"style="margin-top:5px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">

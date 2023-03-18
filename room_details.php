@@ -48,13 +48,19 @@
     <div class="item">
        <img src="image/Delux-Room-Single-Bed-Ac-Room/delux_img4.jpg"class="" alt="img4">
     </div>
-
     <div class="item">
        <img src="image/Delux-Room-Single-Bed-Ac-Room/delux_img5.jpg"class="" alt="img5">
     </div>
 
     <div class="item">
+       <img src="image/Delux-Room-Single-Bed-Ac-Room/delux_img6.jpg"class="" alt="img5">
+    </div>
+
+    <div class="item">
        <img src="image/Delux-Room-Single-Bed-Ac-Room/delux_img7.jpg"class="" alt="img7">
+    </div>
+    <div class="item">
+       <img src="image/Delux-Room-Single-Bed-Ac-Room/delux_img8.jpg"class="" alt="img7">
     </div>
   </div>
 

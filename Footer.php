@@ -7,6 +7,7 @@ mysqli_query($con,"insert into feedback values('','$n','$e','$mob','$msg')");
 $msg= "<h4 style='color:green;'>feedback sent successfully</h4>";
 }
 ?>
+
 <!-- Footer1 Start Here-->
 
 <footer style="background-color: #393939;">
@@ -62,7 +63,7 @@ $msg= "<h4 style='color:green;'>feedback sent successfully</h4>";
 <!--Footer2 start Here-->
 
 <footer class="container-fluid text-center"style="background-color:#000408;height:40px;padding-top:10px;color:#f0f0f0;">
-  <p>E & M HOTEL All Rights Reserved 2019</p>
+  <p>E & M HOTEL All Rights Reserved 2022-2023</p>
 </footer>
 
 <!--Footer2 start Here-->

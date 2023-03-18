@@ -37,14 +37,14 @@ if(isset($save))
   <?php 
 include('Menu Bar.php');
   ?>
-<div class="container-fluid"style="background-color:;color:#000;"> <!-- Primary Id-->
+<div class="container-fluid"style="background-color:;"> <!-- Primary Id-->
   <div class="container">
     <div class="row">
       <center><h1 style="background-color:; border-radius:50px;display:inline-block;"><b><font color="#080808">Create New Account</font></b></h1></center>
        <center><?php echo @$msg;?></center><br>
       <div class="col-sm-2"></div>
       <div class="col-sm-6 ">
-        <form class="form-horizontal"method="post">
+        <form class="form-horizontal " method="post">
           <div class="form-group">
 
             <div class="control-label col-sm-5"><h4>Name :</h4></div>

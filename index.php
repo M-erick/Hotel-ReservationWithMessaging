@@ -43,7 +43,7 @@ include('connection.php');
 			{	
 		?>
 	  <div class="item active">
-        <img src="<?php echo $path; ?>" alt="Image">
+        <img src="<?php echo $path; ?>"  style="object-fit: cover; width: 100%; height:20%;"alt="Image">
         <div class="carousel-caption">
 			<h2><?php echo $slider_cap; ?></h2>
 		</div>      

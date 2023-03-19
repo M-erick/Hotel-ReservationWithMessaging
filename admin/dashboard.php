@@ -11,7 +11,7 @@ if($admin=="")
 <!DOCTYPE html>
 <html lang="en">
   <head>
-     <title>Bootstrap Example</title>
+     <title>E & M Hotel</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -36,7 +36,8 @@ if($admin=="")
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../index.php">Welcome <?php echo $admin; ?></a>
+          <a class="navbar-brand" href="../index.php">Home</a>
+          <!-- <a href="../index.php"title="Home">Home</a> -->
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">

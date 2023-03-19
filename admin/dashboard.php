@@ -57,7 +57,7 @@ if($admin=="")
 			<li><a href="dashboard.php?option=booking_details">Booking Details</a></li>
       <li><a href="dashboard.php?option=user_registration">User Registration</a></li>
 			<li><a href="dashboard.php?option=slider">Slider</a></li>
-      <li><a href="#">Payment</a></li>
+      <!-- <li><a href="#">Payment</a></li> -->
 			<li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">Setting <span class="caret"></span></a>
           <ul class="dropdown-menu">

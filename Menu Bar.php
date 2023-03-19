@@ -20,6 +20,9 @@ error_reporting(1);
       <ul class="nav navbar-nav">
         <li><a href="index.php"title="Home">Home</a></li>
         <li><a href="about.php"title="About">About </a></li>
+        <li><a href="TourPackage.php"title="Tour Package">Tour Package </a></li>
+
+
 		    <!-- <li><a href="image gallery.php"title="Gallery">Gallery </a></li> -->
       </ul>
       <ul class="nav navbar-nav navbar-right">

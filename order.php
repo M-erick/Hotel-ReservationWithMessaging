@@ -7,7 +7,7 @@ $eid=$_SESSION['create_account_logged_in'];
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Online Hotel.com</title>
+  <title>E &M Hotel</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -31,7 +31,7 @@ $eid=$_SESSION['create_account_logged_in'];
                     <th>Email</th>
                     <th>Mobile Number</th>
                     <th>Address</th>
-                    <th>Contury</th>
+                    <th>Country</th>
                     <th>Room Type</th>
                     <th>Check In Date</th>
                     <th>Check In Time</th>
@@ -42,6 +42,8 @@ $eid=$_SESSION['create_account_logged_in'];
 
                <?php 
 $sql= mysqli_query($con,"select * from room_booking_details where email='$eid' "); 
+// $result=mysqli_fetch_assoc($sql);
+// uncomment above code and comment the while loop incase it fails
 while($result=mysqli_fetch_assoc($sql))
 {
 $oid=$result['id'];

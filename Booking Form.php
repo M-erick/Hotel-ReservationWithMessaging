@@ -47,8 +47,8 @@ if(isset($savedata))
   <?php
   include('Menu Bar.php');
   ?>
-<div class="container-fluid text-center"id="primary"><!--Primary Id-->
-  <h1>[ BOOKING Form ]</h1><br>
+<div class="container-fluid text-center"id="" style="background-color: #ADD8E6;"><!--Primary Id-->
+  <h1>BOOKING Form </h1><br>
   <div class="container">
     <div class="row">
       <?php echo @$msg; ?>
@@ -59,7 +59,7 @@ if(isset($savedata))
            <div class="row">
               <div class="control-label col-sm-4"><h4> Name :</h4></div>
                 <div class="col-sm-8">
-                 <input type="text" value="<?php echo $result['name']; ?>" readonly="readonly" class="form-control" name="name" placeholder="Enter Your Frist Name"required>
+                 <input type="text" value="<?php echo $result['name']; ?>"  class="form-control" name="name" placeholder="Enter Your Frist Name"required>
           </div>
         </div>
       </div>
@@ -68,7 +68,7 @@ if(isset($savedata))
           <div class="row">
            <div class="control-label col-sm-4"><h4>Email :</h4></div>
           <div class="col-sm-8">
-              <input type="email" value="<?php echo $result['email']; ?>" readonly="readonly" class="form-control" name="email"  placeholder="Enter Your Email-Id"required/>
+              <input type="email" value="<?php echo $result['email']; ?>"  class="form-control" name="email"  placeholder="Enter Your Email-Id"required/>
           </div>
         </div>
         </div>
@@ -77,7 +77,7 @@ if(isset($savedata))
           <div class="row">
            <div class="control-label col-sm-4"><h4>Mobile :</h4></div>
           <div class="col-sm-8">
-              <input type="number" value="<?php echo $result['mobile']; ?>" readonly="readonly" class="form-control" name="phone" placeholder="Type Your Phone Number"required>
+              <input type="number" value="<?php echo $result['mobile']; ?>"  class="form-control" name="phone" placeholder="Type Your Phone Number"required>
           </div>
         </div>
         </div>
@@ -86,7 +86,7 @@ if(isset($savedata))
           <div class="row">
            <div class="control-label col-sm-4"><h4>Address :</h4></div>
           <div class="col-sm-8">
-              <textarea name="address" class="form-control" readonly="readonly" placeholder="Enter Your Address"><?php echo $result['address'];  ?></textarea>
+              <textarea name="address" class="form-control" placeholder="Enter Your Address"><?php echo $result['address'];  ?></textarea>
           </div>
         </div>
         </div>
@@ -95,7 +95,7 @@ if(isset($savedata))
           <div class="row">
            <div class="control-label col-sm-4"><h4>Country</h4></div>
           <div class="col-sm-8">
-              <input type="text" class="form-control" readonly="readonly"  value="<?php echo $result['country']; ?>" name="city" placeholder="Enter Your City Name"required>
+              <input type="text" class="form-control"   value="<?php echo $result['country']; ?>" name="city" placeholder="Enter Your City Name"required>
           </div>
         </div>
         </div>
@@ -178,7 +178,7 @@ if(isset($savedata))
                 </div> 
               </div>
             </div>
-            <input type="submit"value="submit" name="savedata" class="btn btn-danger"required/>
+            <input type="submit"value="submit" name="savedata" class="btn btn-info"required/>
           </div>
           </form><br>
         </div>

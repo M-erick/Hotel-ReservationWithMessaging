@@ -93,7 +93,7 @@ if(isset($savedata))
 
          <div class="form-group">
           <div class="row">
-           <div class="control-label col-sm-4"><h4>City</h4></div>
+           <div class="control-label col-sm-4"><h4>City:</h4></div>
           <div class="col-sm-8">
               <input type="text" class="form-control"   value="<?php echo $result['city']; ?>" name="city" placeholder="Enter Your City Name"readonly>
           </div>

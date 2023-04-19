@@ -30,6 +30,7 @@ $eid=$_SESSION['create_account_logged_in'];
                     <th>Name</th>
                     <th>Email</th>
                     <th>Mobile Number</th>
+                    <th>Price</th>
                     <th>Address</th>
                     <th>City</th>
                     <th>Room Type</th>
@@ -53,6 +54,7 @@ echo "<tr>";
 echo "<td>".$result['name']."</td>";
 echo "<td>".$result['email']."</td>";
 echo "<td>".$result['phone']."</td>";
+echo "<td>ksh".$result['price']."</td>";
 echo "<td>".$result['address']."</td>";
 echo "<td>".$result['city']."</td>";
 echo "<td>".$result['room_type']."</td>";

@@ -23,9 +23,9 @@ if(isset($savedata))
   else
   {
 
-   $sql="insert into room_booking_details(name,email,phone,address,city,state,zip,contry,room_type,Occupancy,check_in_date,check_in_time,check_out_date) 
+   $sql="insert into room_booking_details(name,email,phone,address,city,state,zip,contry,room_type,Occupancy,check_in_date,check_in_time,check_out_date,price) 
   values('$name','$email','$phone','$address','$city','$state','$zip','$country',
-  '$room_type','$Occupancy','$cdate','$ctime','$codate')";
+  '$room_type','$Occupancy','$cdate','$ctime','$codate','$price')";
    if(mysqli_query($con,$sql))
    {
    $msg= "<h1 style='color:blue'>You have Successfully booked this room</h1><h2><a href='order.php'>View </a></h2>"; 
@@ -68,7 +68,7 @@ if(isset($savedata))
            <div class="row">
               <div class="control-label col-sm-4"><h4> Name :</h4></div>
                 <div class="col-sm-8">
-                 <input type="text" value="<?php echo $namet;?>"  class="form-control" name="name" placeholder="Enter Your First Name" required>
+                 <input type="text" value=""  class="form-control" name="name" placeholder="Enter Your First Name" required>
           </div>
         </div>
       </div>
@@ -91,6 +91,14 @@ if(isset($savedata))
         </div>
         </div>
 
+        <div class="form-group">
+          <div class="row">
+           <div class="control-label col-sm-4"><h4>Price:</h4></div>
+          <div class="col-sm-8">
+              <input type="number" value=""  class="form-control" name="price" placeholder=" Price ksh" required >
+          </div>
+        </div>
+        </div>
      
         
 

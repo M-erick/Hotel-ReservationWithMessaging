@@ -31,18 +31,20 @@ $eid=$_SESSION['create_account_logged_in'];
                     <th>Email</th>
                     <th>Mobile Number</th>
                     <th>Address</th>
-                    <th>Country</th>
+                    <th>City</th>
                     <th>Room Type</th>
                     <th>Check In Date</th>
                     <th>Check In Time</th>
                     <th>Check Out Date</th>
                     <th>Occupancy</th>
+                    <th>Receipt</th>
+
 					<th>Cancel</th>
                </tr>
 
                <?php 
 $sql= mysqli_query($con,"select * from room_booking_details where email='$eid' "); 
-// $result=mysqli_fetch_assoc($sql);
+$result=mysqli_fetch_assoc($sql);
 // uncomment above code and comment the while loop incase it fails
 while($result=mysqli_fetch_assoc($sql))
 {
@@ -52,12 +54,13 @@ echo "<td>".$result['name']."</td>";
 echo "<td>".$result['email']."</td>";
 echo "<td>".$result['phone']."</td>";
 echo "<td>".$result['address']."</td>";
-echo "<td>".$result['contry']."</td>";
+echo "<td>".$result['city']."</td>";
 echo "<td>".$result['room_type']."</td>";
 echo "<td>".$result['check_in_date']."</td>";
 echo "<td>".$result['check_in_time']."</td>";
 echo "<td>".$result['check_out_date']."</td>";
 echo "<td>".$result['Occupancy']."</td>";
+echo "<td><a href='generate_receipt.php?order_id=$oid' style='color:Red'>Receipt</a></td>";
 echo "<td><a href='cancel_order.php?order_id=$oid' style='color:Red'>Cancel</a></td>";
 echo "</tr>";
 }                         

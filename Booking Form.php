@@ -1,10 +1,9 @@
 <?php 
 include('Menu Bar.php');
 include('connection.php');
-if($eid=="")
-{
-header('location:Login.php');
-}
+
+
+
 $sql= mysqli_query($con,"SELECT * FROM room_booking_details WHERE email='$eid' AND booking_time >= DATE_SUB(NOW(), INTERVAL 24 HOUR)"); 
 $result=mysqli_fetch_assoc($sql);
 //print_r($result);
@@ -12,11 +11,15 @@ extract($_REQUEST);
 error_reporting(1);
 if(isset($savedata))
 {
+
   $sql= mysqli_query($con,"select * from room_booking_details where email='$email' and room_type='$room_type' ");
   if(mysqli_num_rows($sql)) 
   {
   $msg= "<h1 style='color:red'>You have already booked this room</h1>";    
   }
+
+
+  // create another if else statement
   else
   {
 
@@ -27,8 +30,14 @@ if(isset($savedata))
    {
    $msg= "<h1 style='color:blue'>You have Successfully booked this room</h1><h2><a href='order.php'>View </a></h2>"; 
    }
+   
   }
 }
+
+
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -59,7 +68,7 @@ if(isset($savedata))
            <div class="row">
               <div class="control-label col-sm-4"><h4> Name :</h4></div>
                 <div class="col-sm-8">
-                 <input type="text" value="<?php echo $result['name']; ?>"  class="form-control" name="name" placeholder="Enter Your First Name" readonly>
+                 <input type="text" value="<?php echo $namet;?>"  class="form-control" name="name" placeholder="Enter Your First Name" required>
           </div>
         </div>
       </div>
@@ -68,7 +77,7 @@ if(isset($savedata))
           <div class="row">
            <div class="control-label col-sm-4"><h4>Email :</h4></div>
           <div class="col-sm-8">
-              <input type="email" value="<?php echo $result['email']; ?>"  class="form-control" name="email"  placeholder="Enter Your Email-Id" readonly/>
+              <input type="email" value="<?php echo $eid; ?>"  class="form-control" name="email"  placeholder="Enter Your Email-Id" readonly/>
           </div>
         </div>
         </div>
@@ -77,29 +86,38 @@ if(isset($savedata))
           <div class="row">
            <div class="control-label col-sm-4"><h4>Mobile :</h4></div>
           <div class="col-sm-8">
-              <input type="number" value="<?php echo $result['phone']; ?>"  class="form-control" name="phone" placeholder="Type Your Phone Number" readonly>
+              <input type="tel" value=""  class="form-control" name="phone" placeholder=" Phone Number" required >
           </div>
         </div>
         </div>
+
+     
+        
 
         <div class="form-group">
           <div class="row">
            <div class="control-label col-sm-4"><h4>Address :</h4></div>
           <div class="col-sm-8">
-              <textarea name="address" class="form-control"  readonly  placeholder="Enter Your Address"><?php echo $result['address'];  ?></textarea>
+              <textarea name="address" class="form-control"    placeholder="Enter Your Address" required></textarea>
           </div>
         </div>
         </div>
 
-         <div class="form-group">
-          <div class="row">
-           <div class="control-label col-sm-4"><h4>City:</h4></div>
+
+        <div class="form-group">
+        <div class="row">
+            <div class="control-label col-sm-4"><h4>City :</h4></div>
           <div class="col-sm-8">
-              <input type="text" class="form-control"   value="<?php echo $result['city']; ?>" name="city" placeholder="Enter Your City Name" readonly>
-          </div>
-        </div>
-        </div>
+            <select name="city" class="form-control"required>
+              <option>Watamu</option>
+              <option>Zanzibar</option>
+              <option>Serengeti</option>
+              <option>Other</option>
 
+            </select>
+        </div>
+        </div>
+        </div>
         <div class="form-group">
           <div class="row">
            <div class="control-label col-sm-4"><h4></h4></div>

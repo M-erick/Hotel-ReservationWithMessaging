@@ -5,7 +5,7 @@ if($eid=="")
 {
 header('location:Login.php');
 }
-$sql= mysqli_query($con,"select * from room_booking_details where email='$eid' "); 
+$sql= mysqli_query($con,"SELECT * FROM room_booking_details WHERE email='$eid' AND booking_time >= DATE_SUB(NOW(), INTERVAL 24 HOUR)"); 
 $result=mysqli_fetch_assoc($sql);
 //print_r($result);
 extract($_REQUEST);
@@ -59,7 +59,7 @@ if(isset($savedata))
            <div class="row">
               <div class="control-label col-sm-4"><h4> Name :</h4></div>
                 <div class="col-sm-8">
-                 <input type="text" value="<?php echo $result['name']; ?>"  class="form-control" name="name" placeholder="Enter Your First Name"required>
+                 <input type="text" value="<?php echo $result['name']; ?>"  class="form-control" name="name" placeholder="Enter Your First Name" readonly>
           </div>
         </div>
       </div>
@@ -68,7 +68,7 @@ if(isset($savedata))
           <div class="row">
            <div class="control-label col-sm-4"><h4>Email :</h4></div>
           <div class="col-sm-8">
-              <input type="email" value="<?php echo $result['email']; ?>"  class="form-control" name="email"  placeholder="Enter Your Email-Id"required/>
+              <input type="email" value="<?php echo $result['email']; ?>"  class="form-control" name="email"  placeholder="Enter Your Email-Id" readonly/>
           </div>
         </div>
         </div>
@@ -77,7 +77,7 @@ if(isset($savedata))
           <div class="row">
            <div class="control-label col-sm-4"><h4>Mobile :</h4></div>
           <div class="col-sm-8">
-              <input type="number" value="<?php echo $result['phone']; ?>"  class="form-control" name="phone" placeholder="Type Your Phone Number"required>
+              <input type="number" value="<?php echo $result['phone']; ?>"  class="form-control" name="phone" placeholder="Type Your Phone Number" readonly>
           </div>
         </div>
         </div>
@@ -86,7 +86,7 @@ if(isset($savedata))
           <div class="row">
            <div class="control-label col-sm-4"><h4>Address :</h4></div>
           <div class="col-sm-8">
-              <textarea name="address" class="form-control" placeholder="Enter Your Address"><?php echo $result['address'];  ?></textarea>
+              <textarea name="address" class="form-control"  readonly  placeholder="Enter Your Address"><?php echo $result['address'];  ?></textarea>
           </div>
         </div>
         </div>
@@ -95,7 +95,7 @@ if(isset($savedata))
           <div class="row">
            <div class="control-label col-sm-4"><h4>City:</h4></div>
           <div class="col-sm-8">
-              <input type="text" class="form-control"   value="<?php echo $result['city']; ?>" name="city" placeholder="Enter Your City Name"readonly>
+              <input type="text" class="form-control"   value="<?php echo $result['city']; ?>" name="city" placeholder="Enter Your City Name" readonly>
           </div>
         </div>
         </div>
@@ -174,7 +174,7 @@ if(isset($savedata))
                 <div class="col-sm-7">
                   <div class="radio-inline"><input type="radio" value="single" name="Occupancy"required >Single</div>
                   <div class="radio-inline"><input type="radio" value="twin" name="Occupancy" required>Twin</div>
-                  <div class="radio-inline"><input type="radio" value="dubble" name="Occupancy" required>Dubble</div>
+                  <div class="radio-inline"><input type="radio" value="double" name="Occupancy" required>Double</div>
                 </div> 
               </div>
             </div>

@@ -1,3 +1,33 @@
+<head>
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+    th, td {
+        text-align: left;
+        padding: 8px;
+    }
+    th {
+        background-color: #007bff;
+        color: white;
+    }
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+    tr:hover {
+        background-color: #e6f7ff;
+    }
+    .delete-link {
+        color: red;
+        text-decoration: none;
+    }
+    .delete-link:hover {
+        text-decoration: underline;
+    }
+</style>
+
+</head>
 <script>
 	function delFeedback(id)
 	{

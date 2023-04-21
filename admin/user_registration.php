@@ -1,3 +1,6 @@
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
 <table class="table table-bordered table-striped table-hover">
 	<h1>User Registration</h1><hr>
 	<tr>
@@ -9,7 +12,7 @@
 		<th>Address</th>
 		<th>Gender</th>
 		<th>Country</th>
-		<th>Pictrure</th>
+		<th>Picture</th>
 	</tr>
 	<?php 
 $i=1;
@@ -32,3 +35,10 @@ while($res=mysqli_fetch_assoc($sql))
 <?php 	
 }
 ?>	
+</table>
+<form method="post" action="generate_useinfo_pdf.php">
+    <button type="submit" name="download_pdf" class="btn btn-primary">
+        <i class="fas fa-download"></i> Download PDF
+    </button>
+   
+</form>

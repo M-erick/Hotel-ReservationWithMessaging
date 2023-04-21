@@ -55,6 +55,7 @@ if($admin=="")
             <li><a href="dashboard.php?option=update_password">Update Password</a></li>
             <li><a href="dashboard.php?option=feedback">Feedback</a></li>
             <li><a href="dashboard.php?option=rooms">Room</a></li>
+            <li><a href="dashboard.php?option=tours">Tour package</a></li>
 			<li><a href="dashboard.php?option=booking_details">Booking Details</a></li>
       <li><a href="dashboard.php?option=user_registration">User Registration</a></li>
 			<li><a href="dashboard.php?option=slider">Slider</a></li>
@@ -115,6 +116,26 @@ else
   {
     include('update_room.php');
   }
+
+  else if($opt=="tours")
+	{
+	include('tours.php');	
+	}
+  
+	else if($opt=="add_tours")
+	{
+	include('add_tours.php');	
+	}
+	else if($opt=="delete_tours")
+	{
+	include('delete_tours.php');	
+	}
+  
+  else if($opt=="update_tours")
+  {
+    include('update_tours.php');
+  }
+
   else if($opt=="booking_details")
   {
     include('booking_details.php');

@@ -1,4 +1,6 @@
-
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
 <table class="table table-bordered table-striped table-hover">
 	<h1>Room Booking Details</h1><hr>
 	<tr>
@@ -42,3 +44,10 @@ $oid=$res['id'];
 
 ?>	
 </table>
+<form method="post" action="generate_booking_pdf.php">
+    <button type="submit" name="download_pdf" class="btn btn-primary">
+        <i class="fas fa-download"></i> Download PDF
+    </button>
+   
+</form>
+

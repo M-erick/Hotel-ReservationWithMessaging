@@ -1,3 +1,6 @@
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
 <script>
 	function delRoom(id)
 	{
@@ -7,11 +10,16 @@
 		}
 	}
 </script>
+
+
 <table class="table table-bordered table-striped table-hover">
 	<h1>Room Details</h1><hr>
 	<tr>
-	<td colspan="8"><a href="dashboard.php?option=add_rooms" class="btn btn-primary">Add New Rooms</a></td>
-	</tr>
+    <td colspan="6"><a href="dashboard.php?option=add_rooms" class="btn btn-primary">Add New Rooms</a></td>
+	<td colspan="2"><a href="room_details_pdf.php" class="btn btn-primary"><i class="fas fa-print"></i> Print</a></td>
+</tr>
+
+
 	<tr style="height:40">
 		<th>Sr No</th>
 		<th>Image</th>

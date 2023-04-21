@@ -1,4 +1,5 @@
 <?php 
+include('../connection.php');
 $i=1;
 $sql=mysqli_query($con,"select * from admin");
 while($res=mysqli_fetch_assoc($sql))
@@ -7,7 +8,7 @@ while($res=mysqli_fetch_assoc($sql))
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Hotel.Com</title>
+  <title>E & M Hotel</title>
   <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai" rel="stylesheet">
 </head>
 <body>

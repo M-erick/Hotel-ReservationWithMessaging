@@ -1,6 +1,7 @@
 <?php 
 include('connection.php');
 extract($_REQUEST);
+
 if(isset($send))
 {
 mysqli_query($con,"insert into feedback values('','$n','$e','$mob','$msg')");	
@@ -39,7 +40,7 @@ $msg= "<h4 style='color:green;'>feedback sent successfully</h4>";
           <input type="text" name="n" class="form-control" id="#"placeholder="Enter Your Name"required>
         </div>
         <div class="form-group">
-          <input type="Email" name="e" class="form-control" id="#"placeholder="Email"required>
+          <input type="Email" name="e" value="<?php echo $eid; ?>" readonly class="form-control" id="#"placeholder="Email"required>
         </div>
         <div class="form-group">
           <input type="Number" name="mob" class="form-control" id="#"placeholder="Mobile Number"required>

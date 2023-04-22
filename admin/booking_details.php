@@ -14,6 +14,9 @@
 		<th>Check Out Time</th>
 		<th>Check Out Date</th>
 		<th>Occupancy</th>
+		<th>Status</th>
+		<th>Update Status</th>
+
 		<th>Cancel Order</th>
 	</tr>
 
@@ -36,6 +39,10 @@ $oid=$res['id'];
 		<td><?php echo $res['check_in_time']; ?></td>
 		<td><?php echo $res['check_out_date']; ?></td>
 		<td><?php echo $res['Occupancy']; ?></td>
+		<td><?php echo $res['status']; ?></td>
+
+		<td><a style="color:green" href="update_order.php?booking_id=<?php echo $oid; ?>">Update</a></td>
+
 		<td><a style="color:red" href="cancel_order.php?booking_id=<?php echo $oid; ?>">Cancel</a></td>
 	</td>
 	</tr>

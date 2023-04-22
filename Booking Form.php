@@ -23,9 +23,10 @@ if(isset($savedata))
   else
   {
 
-   $sql="insert into room_booking_details(name,email,phone,address,city,state,zip,contry,room_type,Occupancy,check_in_date,check_in_time,check_out_date,price) 
+    $pending =  'pending';
+   $sql="insert into room_booking_details(name,email,phone,address,city,state,zip,contry,room_type,Occupancy,check_in_date,check_in_time,check_out_date,price,status) 
   values('$name','$email','$phone','$address','$city','$state','$zip','$country',
-  '$room_type','$Occupancy','$cdate','$ctime','$codate','$price')";
+  '$room_type','$Occupancy','$cdate','$ctime','$codate','$price',' $pending')";
    if(mysqli_query($con,$sql))
    {
    $msg= "<h1 style='color:blue'>You have Successfully booked this room</h1><h2><a href='order.php'>View </a></h2>"; 

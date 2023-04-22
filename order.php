@@ -66,7 +66,12 @@ echo "<td>".$result['check_out_date']."</td>";
 echo "<td>".$result['Occupancy']."</td>";
 echo "<td style='background-color: green; border-radius: 10px; background-clip: text; -webkit-background-clip: text; color: transparent;'>".$result['status']."</td>";
 
-echo "<td><a href='generate_receipt.php?order_id=$oid' style='color:Red'>Receipt</a></td>";
+if ($result['status']=== 'booked') {
+  echo "<td><a href='generate_receipt.php?order_id=$oid' style='color:Red'>Receipt</a></td>";
+} else {
+  echo "<td style='color:gray'>Receipt</td>";
+ 
+}
 echo "<td><a href='cancel_order.php?order_id=$oid' style='color:Red'>Cancel</a></td>";
 echo "</tr>";
 }                         

@@ -51,6 +51,8 @@ $html = '<table border="1">
                 <th>Check Out Time</th>
                 <th>Check Out Date</th>
                 <th>Occupancy</th>
+                <th>Status</th>
+
             </tr>';
 
 $i=1;
@@ -67,6 +69,8 @@ while($res=mysqli_fetch_assoc($sql))
                 <td>'. $res['check_in_time'] .'</td>
                 <td>'. $res['check_out_date'] .'</td>
                 <td>'. $res['Occupancy'] .'</td>
+                <td>'. $res['status'] .'</td>
+
             </tr>';
     $i++;
 }

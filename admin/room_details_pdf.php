@@ -33,6 +33,24 @@ $pdf->Image('logo12.png', $imageX, 10, $imageWidth);
 
 // Add an empty cell for spacing
 $pdf->Cell(0, 15, '', 0, 1);
+
+
+// Add email and contact information to the top right corner
+$pdf->SetXY($pageWidth - 100, 10);
+$pdf->SetFont('times', 'B', 10);
+$pdf->Cell(95, 5, 'Email: E&M@gmail.com | Contact: (+254)713131313', 0, 1, 'R');
+
+
+$pdf->SetXY(10, 10);
+$pdf->SetFont('times', 'B', 10);
+$pdf->Cell(95, 5, 'PO Box 2375, Nairobi', 0, 1, 'L');
+
+$pdf->SetFont('times', '', 12);
+
+// Add an empty cell for spacing
+$pdf->Cell(0, 15, '', 0, 1);
+
+$pdf->SetFont('times', 'B', 16);
 // Add a heading
 $pdf->Cell(0, 10, 'Room Details', 0, 1, 'C');
 
@@ -42,10 +60,10 @@ $pdf->SetFont('times', '', 12);
 // Create a table
 $html = '<table border="1">
             <tr>
-                <th>Sr No</th>
-                <th>Room No</th>
-                <th>Type</th>
-                <th>Price/ksh</th>
+                <th><strong>Sr No</strong></th>
+                <th><strong>Room No</strong></th>
+                <th><strong>Type</strong></th>
+                <th><strong>Price/ksh</strong></th>
             </tr>';
 
 $i=1;
@@ -67,6 +85,15 @@ while($res=mysqli_fetch_assoc($sql))
 $html .= '</table>';
 
 $pdf->writeHTML($html);
+
+
+// Add date to the PDF
+date_default_timezone_set('Africa/Nairobi');
+$now = date('Y-m-d H:i:s');
+$pdf->SetFont('times','B',12);
+$pdf->Cell(0, 10, 'Created on: ' . $now, 0, 0, 'R');
+$pdf->SetFont('times','',12);
+
 
 // Output the PDF to the browser
 $pdf->Output('room_details.pdf', 'D');

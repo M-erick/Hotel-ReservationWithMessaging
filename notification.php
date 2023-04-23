@@ -1,7 +1,7 @@
 <?php 
 session_start();
 include('connection.php');
-
+error_reporting(1);
 // $id=$_GET['id'];
 $eid=$_SESSION['create_account_logged_in'];
 extract($_REQUEST);
@@ -9,11 +9,20 @@ extract($_REQUEST);
 
 ?>
 
-<style>
-    .container {
-        max-width: 600px;
-        margin: 50px auto;
-    }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Online Hotel.com</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link href="css/style.css"rel="stylesheet"/>
+ <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+
 
     .message-container {
         display: flex;
@@ -56,18 +65,7 @@ extract($_REQUEST);
         color: #999;
     }
 
-    .header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 20px;
-    }
-
-    .heading {
-        font-size: 28px;
-        font-weight: bold;
-        color: #333;
-    }
+    
 
     .back-button {
         background-color: #fff;
@@ -85,34 +83,64 @@ extract($_REQUEST);
         color: #fff;
     }
 </style>
-<div class="container">
-    <div class="header">
-        <div class="heading">Feedback</div>
-        <div class="back-button" onclick="window.history.back()">Back</div>
-    </div>
-    <?php
-    $sql = mysqli_query($con, "SELECT * FROM feedback WHERE email='$eid'");
-    $message_ids = array();
-    while ($res = mysqli_fetch_assoc($sql)) {
-        $message_id = $res['id'];
-        if (!in_array($message_id, $message_ids)) { // check if message id already exists
-            $message_ids[] = $message_id; // add message id to array
-            ?>
-            <div class="message-container">
-                <div class="message message-left">
-                    <p><?php echo $res['message']; ?></p>
-                    <span class="time"><?php echo date('F j, Y g:i a', strtotime($res['date_time'])); ?></span>
-                </div>
-                <?php if ($res['response']) { ?>
-                    <div class="message message-right">
-                        <p><?php echo $res['response']; ?></p>
-                        <span class="time"><?php echo date('F j, Y g:i a', strtotime($res['response_time'])); ?></span>
-                    </div>
-                <?php } ?>
+</style>
+</head>
+<body style="margin-top:50px;">
+  <?php
+  include('Menu Bar.php');
+  ?>
+<div class="container-fluid text-center"id="" ><!--Primary Id-->
+  <h1>Message </h1><br>
+  <div class="container">
+<?php
+$sql = mysqli_query($con, "SELECT * FROM feedback WHERE email='$eid'");
+$messages = array(); // initialize the messages array
+while ($res = mysqli_fetch_assoc($sql)) {
+    $message_id = $res['id'];
+    $message_text = $res['message'];
+    $response_text = $res['response'];
+    $date_time = date('F j, Y g:i a', strtotime($res['date_time']));
+    $response_time = date('F j, Y g:i a', strtotime($res['response_time']));
+
+    // check if the message ID exists in the messages array
+    if (array_key_exists($message_id, $messages)) {
+        // if it does, update the response text and time
+        $messages[$message_id]['response'] = $response_text;
+        $messages[$message_id]['response_time'] = $response_time;
+    } else {
+        // if it doesn't, add the message to the array
+        $messages[$message_id] = array(
+            'message' => $message_text,
+            'date_time' => $date_time,
+            'response' => $response_text,
+            'response_time' => $response_time
+        );
+    }
+}
+
+// loop through the messages array to display the messages
+foreach ($messages as $message) {
+?>
+    <div class="message-container">
+        <div class="message message-left">
+            <p><?php echo $message['message']; ?></p>
+            <span class="time"><?php echo $message['date_time']; ?></span>
+        </div>
+        <?php if ($message['response']) { ?>
+            <div class="message message-right">
+                <p><?php echo $message['response']; ?></p>
+                <span class="time"><?php echo $message['response_time']; ?></span>
             </div>
-        <?php 
-        } // end if
-    } // end while
-    ?>
+        <?php } ?>
+    </div>
+<?php
+} // end foreach
+?>
 </div>
 
+  </div>
+<?php
+include('Footer.php')
+?>
+</body>
+</html>

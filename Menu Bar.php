@@ -1,5 +1,7 @@
 <?php 
 session_start();
+include('connection.php');
+
 // errors here when a user access a page without login
 $eid=$_SESSION['create_account_logged_in'];
 error_reporting(1);

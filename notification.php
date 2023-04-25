@@ -6,6 +6,9 @@ error_reporting(1);
 $eid=$_SESSION['create_account_logged_in'];
 extract($_REQUEST);
 
+$sql = "UPDATE feedback SET read_status = 1 WHERE email = '$eid'";
+mysqli_query($con, $sql);
+
 
 ?>
 

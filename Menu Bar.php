@@ -3,7 +3,41 @@ session_start();
 // errors here when a user access a page without login
 $eid=$_SESSION['create_account_logged_in'];
 error_reporting(1);
+
+// get the count of unread messages for the logged-in user
+$sql = "SELECT COUNT(*) AS count FROM feedback WHERE email='$eid' AND read_status=0";
+$result = mysqli_query($con, $sql);
+$count = mysqli_fetch_assoc($result)['count'];
+
 ?>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+.notification-icon {
+  position: relative;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.notification-icon .fa {
+  font-size: 20px;
+  color: #555;
+}
+
+.notification-icon .badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  padding: 5px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #f00;
+  border-radius: 50%;
+}
+
+  </style>
+</head>
 <!--Menu Bar Close Here-->
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container">
@@ -19,8 +53,8 @@ error_reporting(1);
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li><a href="index.php"title="Home">Home</a></li>
-        <li><a href="about.php"title="About">About </a></li>
         <li><a href="TourPackage.php"title="Tour Package">Tour Package </a></li>
+        <li><a href="about.php"title="About">About </a></li>
 
 
 		    <!-- <li><a href="image gallery.php"title="Gallery">Gallery </a></li> -->
@@ -33,6 +67,13 @@ error_reporting(1);
       if($_SESSION['create_account_logged_in']!="")
       {
         ?>
+        <li><a href="notification.php"title="notification"><span class="notification-icon">
+  <i class="fa fa-bell"></i>
+  <span class="badge"><?php echo $count; ?></span>
+    </span>
+</a></li>
+
+
         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">View Status <span class="caret"></span></a>
         	<ul class="dropdown-menu">
           		<li><a href="profile.php">Profile</a></li>
@@ -40,6 +81,7 @@ error_reporting(1);
               <li><a href="logout.php">Logout</a></li>
         	</ul>
         </li>
+
         <?PHP } else
 		{
 		?>

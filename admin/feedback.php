@@ -36,6 +36,13 @@
 		window.location.href='delete_feedback.php?id='+id;	
 		}
 	}
+    function updateFeedback(id)
+	{
+		if(confirm("You want to reply this Feedback ?"))
+		{
+		window.location.href='update_feedback.php?id='+id;	
+		}
+	}
 </script>
 <table class="table table-striped table-hover">
 	<h1>Feedback</h1><hr>
@@ -45,7 +52,10 @@
 		<th>Email</th>
 		<th>Mobile</th>
 		<th>Message</th>
+		<th>Response</th>
+
 		<th>Delete</th>
+        <th>Reply</th>
 	</tr>
 <?php 
 $i=1;
@@ -64,7 +74,11 @@ $message=$res['message'];
 		<td><?php echo $res['email']; ?></td>
 		<td><?php echo $res['mobile']; ?></td>
 		<td><?php echo $res['message']; ?></td>
+		<td><?php echo $res['response']; ?></td>
+
 		<td><a href="#"onclick="delFeedback('<?php echo $id; ?>')"><span class="glyphicon glyphicon-remove"style='color:red'></span></a></td>
+        <td><a href="#"onclick="updateFeedback('<?php echo $id; ?>')">Reply</span></a></td>
+
 	</tr>	
 <?php 	
 }

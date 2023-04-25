@@ -7,7 +7,7 @@ $sql=mysqli_query($con,"select * from feedback where id='$id'");
 $res=mysqli_fetch_assoc($sql);
 $response = $res['response'];
 extract($_REQUEST);
-
+error_reporting(1);
 if(isset($update))
 {
     mysqli_query($con,"update feedback set response ='$response' where id='$id'");

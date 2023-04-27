@@ -84,7 +84,7 @@ $count = mysqli_fetch_assoc($result)['count'];
         	</ul>
         </li>
 
-        <?PHP } else
+        <?php } else
 		{
 		?>
 		<li><a href="Login.php"title="login"><span class="glyphicon glyphicon-log-in"></span>&nbsp;&nbsp;User Login</a>

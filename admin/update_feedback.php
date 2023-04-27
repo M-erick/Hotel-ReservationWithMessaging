@@ -10,7 +10,7 @@ extract($_REQUEST);
 error_reporting(1);
 if(isset($update))
 {
-    mysqli_query($con,"update feedback set response ='$response' where id='$id'");
+    mysqli_query($con,"UPDATE feedback SET response = '$response', response_time = CURRENT_TIMESTAMP, read_status = 0 WHERE id = '$id'");
     $success_message = "Your response was sent successfully.";
 } 
 ?>

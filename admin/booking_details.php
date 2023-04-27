@@ -15,6 +15,8 @@
 		<th>Check Out Date</th>
 		<th>Occupancy</th>
 		<th>Status</th>
+		<th>Serial number</th>
+
 		<th>Update Status</th>
 
 		<th>Cancel Order</th>
@@ -40,6 +42,8 @@ $oid=$res['id'];
 		<td><?php echo $res['check_out_date']; ?></td>
 		<td><?php echo $res['Occupancy']; ?></td>
 		<td><?php echo $res['status']; ?></td>
+		<td><?php echo $res['serial_number']; ?></td>
+
 
 		<td><a style="color:green" href="update_order.php?booking_id=<?php echo $oid; ?>">Update</a></td>
 

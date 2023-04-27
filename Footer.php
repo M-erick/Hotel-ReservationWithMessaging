@@ -2,11 +2,18 @@
 include('connection.php');
 extract($_REQUEST);
 
-if(isset($send))
-{
-mysqli_query($con,"insert into feedback values('','$n','$e','$mob','$msg')");	
-$msg= "<h4 style='color:green;'>feedback sent successfully</h4>";
+if(isset($send)) {
+  // Check if the message already exists in the database
+  $existing_msg = mysqli_query($con, "SELECT * FROM feedback WHERE name='$n' AND email='$e' AND mobile='$mob' AND message='$msg'");
+  if(mysqli_num_rows($existing_msg) > 0) {
+    $msg = "<h4 style='color:red;'>This feedback has already been sent.</h4>";
+  } else {
+    mysqli_query($con, "INSERT INTO feedback (name, email, mobile, message, response, date_time, response_time) 
+    VALUES ('$n', '$e', '$mob', '$msg', '', NOW(), '')");
+    $msg = "<h4 style='color:green;'>Feedback sent successfully</h4>";
+  }
 }
+
 ?>
 
 <!-- Footer1 Start Here-->

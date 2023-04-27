@@ -7,6 +7,10 @@ if($admin=="")
 {
 	header('location:index.php');
 }
+$sql = "SELECT COUNT(*) AS count FROM feedback WHERE  read_status=0";
+$result = mysqli_query($con, $sql);
+$count = mysqli_fetch_assoc($result)['count'];
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,6 +19,7 @@ if($admin=="")
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="dashboard.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
@@ -53,8 +58,10 @@ if($admin=="")
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
             <li><a href="dashboard.php?option=update_password">Update Password</a></li>
-            <li><a href="dashboard.php?option=feedback">Feedback</a></li>
-            <li><a href="dashboard.php?option=rooms">Room</a></li>
+            <li><a href="dashboard.php?option=feedback"><i class="fa fa-bell"></i>
+    Feedback</a></li>
+            
+    <li><a href="dashboard.php?option=rooms"><i class="fa fa-home"> </i>Room</a></li>
             <li><a href="dashboard.php?option=tours">Tour package</a></li>
 			<li><a href="dashboard.php?option=booking_details">Booking Details</a></li>
       <li><a href="dashboard.php?option=user_registration">User Registration</a></li>

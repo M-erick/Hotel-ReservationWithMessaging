@@ -10,6 +10,13 @@ $oid = $_GET['order_id'];
 $sql = mysqli_query($con, "SELECT * FROM room_booking_details WHERE id='$oid'");
 $result = mysqli_fetch_assoc($sql);
 
+
+// Generate a unique serial number
+$serial_number = bin2hex(random_bytes(16));
+
+// Save the serial number to the database
+mysqli_query($con, "UPDATE room_booking_details SET serial_number='$serial_number' WHERE id='$oid'");
+
 // Create a new TCPDF object
 // $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
 $pdf = new TCPDF('P', 'mm', array(90, 180), true, 'UTF-8', false);
@@ -49,7 +56,6 @@ $pdf->Cell(0, 20, '', 0, 1);
 // Add the receipt header
 $pdf->WriteHTML('<h1>Booking Receipt</h1><br>');
 // Add the booking details to the PDF
-
 $pdf->WriteHTML("<p><b>Name:</b> {$result['name']}</p>");
 $pdf->WriteHTML("<p><b>Email:</b> {$result['email']}</p>");
 $pdf->WriteHTML("<p><b>Mobile Number:</b> {$result['phone']}</p>");

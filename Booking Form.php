@@ -52,6 +52,33 @@ if(isset($savedata))
   <link href="css/style.css"rel="stylesheet"/>
  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script type="text/javascript">
+		function updatePrice() {
+  var roomType = document.getElementById("room-type").value;
+  var priceElement = document.getElementById("price");
+
+  switch (roomType) {
+    case "deluxe":
+      priceElement.value = "15000";
+      break;
+    case "luxurious":
+      priceElement.value = "16000";
+      break;
+    case "standard":
+      priceElement.value = "14000";
+      break;
+    case "suite":
+      priceElement.value = "13000";
+      break;
+    case "twin":
+      priceElement.value = "120000";
+      break;
+    default:
+      priceElement.value = "0";
+  }
+}
+
+	</script>
 </head>
 <body style="margin-top:50px;">
   <?php
@@ -92,14 +119,7 @@ if(isset($savedata))
         </div>
         </div>
 
-        <div class="form-group">
-          <div class="row">
-           <div class="control-label col-sm-4"><h4>Price:</h4></div>
-          <div class="col-sm-8">
-              <input type="number" value=""  class="form-control" name="price" placeholder=" Price ksh" required >
-          </div>
-        </div>
-        </div>
+       
      
         
 
@@ -151,14 +171,25 @@ if(isset($savedata))
               <div class="row">
                 <div class="control-label col-sm-5"><h4>Room Type:</h4></div>
                   <div class="col-sm-7">
-                <select class="form-control" name="room_type"required>
-                  <option>Deluxe Room</option>
-                  <option>Luxurious Suite</option>
-                  <option>Standard Room</option>
-                  <option>Suite Room</option>
-                  <option>Twin Deluxe Room</option>
+                  <select class="form-control" name="room_type" id="room-type" onchange="updatePrice()" required>
+                  <option value="deluxe">Deluxe Room</option>
+                  <option value="luxurious">Luxurious Suite</option>
+                  <option value="standard">Standard Room</option>
+                  <option value="suite">Suite Room</option>
+                  <option value="twin">Twin Deluxe Room</option>
                </select>
               </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6">
+            <div class="form-group">
+              <div class="row">
+                <div class="control-label col-sm-5"><h4>Price:</h4></div>
+                  <div class="col-sm-7">
+                  <input type="number" name="price"  id ="price" class="form-control"readonly>
+                  </div>
               </div>
             </div>
           </div>

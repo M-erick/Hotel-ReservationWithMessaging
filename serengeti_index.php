@@ -15,17 +15,15 @@ include('connection.php');
   <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
   <link href="css/style.css"rel="stylesheet"/>
   <style>
-    .my_card {
-    border-radius: 10px; /* Adjust the value to control the amount of rounding */
-    border: 1px solid #ccc; /* Add border with 1px width and black color */
-    padding: 10px; /* Add some padding to create space between content and border */
-    /* Other styles for the div */
-    /* margin: 0 auto; */
-    margin-top: 2rem; /* Add margin to the top of the card */
-    margin-bottom: 2rem;
-    
-    
-  }
+   
+  .my_card {
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  padding: 5px; /* reduce the padding */
+  margin-top: 1rem; /* reduce the margin */
+  margin-bottom: 1rem;
+}
+
   .my_cards {
   width: 100%; /* Set the width of the card to 100% */
   height: 0; /* Set the height of the card to 0 to maintain aspect ratio */
@@ -60,6 +58,15 @@ include('connection.php');
   font-size: 24px; /* Set the font size of the text */
   /* Add additional styles as needed for your design */
 }
+  u  ul {
+    list-style-type: disc;
+    margin-left: 1em;
+    padding-left: 0;
+  }
+  ul li {
+    margin-left: 1em;
+    padding-left: 0;
+  }
   </style>
 </head> <!--Head Open  Here-->
 <body style="margin-top:50px;" style="margin-top:50px;">
@@ -82,7 +89,7 @@ include('connection.php');
 
   
  	<?php 
-	$sql=mysqli_query($con,"select * from rooms");
+	$sql=mysqli_query($con,"select * from tour_packages");
 ?><h1 style="text-align:left"> <font color="#000000;"><b>Serengeti</b></font></h1><br> 
 <div class="row">
   <div class="col-sm-12">
@@ -108,14 +115,25 @@ include('connection.php');
     <div class="my_card p-3 mb-3 border">
       <div class="row">
         <div class="col-sm-6">
-          <img src="image/rooms/<?php echo $r_res['image']; ?>" alt="Image" id="img1" style="max-width: 100%; height: auto;">
+          <img src="image/tours/<?php echo $r_res['image']; ?>" alt="Image" id="img1" style="max-width: 100%; height: auto;">
         </div>
         <div class="col-sm-6">
           <a style="text-decoration: none" href="room_details.php?room_id=<?php echo $r_res['room_id']; ?>">
-            <h4 class="text-left"><b><font color="#000000;"><?php echo $r_res['type']; ?></b></h4></font>
+            <h4 class="text-left"><b><font color="#000000;"><?php echo $r_res['name']; ?></b></h4></font>
           </a>
-          <p class="text-justify"><font color="#000000;"><?php echo substr($r_res['details'], 0, 500); ?></font></p>
-          <p class="text-left"><b><font color="#000000;">Ksh<?php echo $r_res['price']; ?> night</b></p></font>
+          <p class="text-left"><b><font color="#000000;">Duration :<?php echo $r_res['duration']; ?> </b></p></font>
+          <?php
+          // Split the text into an array of bullet points
+          $bulletPoints = explode("\n", $r_res['description']);
+
+           // Display the bullet points as an unordered list
+           echo "<ul>";
+             foreach ($bulletPoints as $bulletPoint) {
+             echo "<li>" . $bulletPoint . "</li>";
+              }
+            echo "</ul>";
+             ?>
+          <p class="text-left"><b><font color="#000000;">Ksh<?php echo $r_res['price']; ?> per person</b></p></font>
         </div>
       </div>
     </div>

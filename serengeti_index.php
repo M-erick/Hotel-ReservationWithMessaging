@@ -75,7 +75,7 @@ include('connection.php');
   ?>
   <div class="container" style="margin-top:80px;">
   <div style="position: relative;">
-    <img src="image/country/serengeti.jpg" alt="Serengeti" style="width: 100%; max-height: 300px; object-fit: cover;">
+    <img src="image/country/serengeti01.jpg" alt="Serengeti" style="width: 100%; max-height: 300px; object-fit: cover;">
     <div style="position: absolute; bottom: 0; left: 0; padding: 20px;  color: white;">
       <h2>Vacation to Serengeti National Park</h2>
       <h4>Book a Hotel + Tour package</h4>
@@ -89,7 +89,7 @@ include('connection.php');
 
   
  	<?php 
-	$sql=mysqli_query($con,"select * from tour_packages");
+	$sql=mysqli_query($con,"select * from tour_packages where location ='Serengeti'");
 ?><h1 style="text-align:left"> <font color="#000000;"><b>Serengeti</b></font></h1><br> 
 <div class="row">
   <div class="col-sm-12">
@@ -104,7 +104,7 @@ include('connection.php');
   </div>
 </div>
 
-<h4 class="text-left"><b><font color="#000000;">Serengeti Hotel Deals</b></h4></font>
+<h4 class="text-left"><b><font color="#000000;">Serengeti  Deals</b></h4></font>
 
 <?php
 	while($r_res=mysqli_fetch_assoc($sql))
@@ -115,10 +115,10 @@ include('connection.php');
     <div class="my_card p-3 mb-3 border">
       <div class="row">
         <div class="col-sm-6">
-          <img src="image/tours/<?php echo $r_res['image']; ?>" alt="Image" id="img1" style="max-width: 100%; height: auto;">
+          <img src="image/tours/<?php echo $r_res['image']; ?>" alt="Image" id="img1" style="max-width: 100%; max-height: 500px;">
         </div>
         <div class="col-sm-6">
-          <a style="text-decoration: none" href="room_details.php?room_id=<?php echo $r_res['room_id']; ?>">
+          <a style="text-decoration: none" href="package_details.php?package_id=<?php echo $r_res['package_id']; ?>">
             <h4 class="text-left"><b><font color="#000000;"><?php echo $r_res['name']; ?></b></h4></font>
           </a>
           <p class="text-left"><b><font color="#000000;">Duration :<?php echo $r_res['duration']; ?> </b></p></font>

@@ -11,7 +11,7 @@ $result=mysqli_fetch_assoc($sql);
 $pending =  'pending';
 
 extract($_REQUEST);
-error_reporting(1);
+// error_reporting(1);
 if(isset($savedata))
 {
 
@@ -25,13 +25,16 @@ if(isset($savedata))
   // create another if else statement
   else
   {
-
-   $sql="insert into package_booking_details(name,email,phone,address,city,package,status) 
-  values('$name','$email','$phone','$address','$city','$package',' $pending')";
-   if(mysqli_query($con,$sql))
-   {
-   $msg= "<h1 style='color:blue'>You have Successfully booked this package</h1><h2><a href='tour_order.php'>View </a></h2>"; 
-   }
+    $img = $_FILES['img']['name'];
+    
+    $sql = "INSERT INTO package_booking_details(name, email, phone, address, city, package, status, payment_message, payment_image)  VALUES ('$name', '$email', '$phone', '$address', '$city', '$package', '$pending', '$payment_message', '$img')";
+    
+    if (mysqli_query($con, $sql)) {
+      move_uploaded_file($_FILES['img']['tmp_name'], "image/payments/" .$_FILES['img']['name']);
+      $msg = "<h1 style='color:blue'>You have successfully booked this package</h1><h2><a href='tour_order.php'>View</a></h2>";
+    } else {
+      $msg = "<h1 style='color:red'>Error inserting into database. Please try again.</h1>";
+    }
    
   }
 }
@@ -65,7 +68,7 @@ if(isset($savedata))
     <div class="row">
       <?php echo @$msg; ?>
       <!--Form Containe Start Here-->
-     <form class="form-horizontal" method="post">
+     <form class="form-horizontal" method="post" enctype="multipart/form-data">
        <div class="col-sm-6">
          <div class="form-group">
            <div class="row">
@@ -122,14 +125,27 @@ if(isset($savedata))
         </div>
         </div>
         </div>
+    
         <div class="form-group">
-          <div class="row">
-           <div class="control-label col-sm-4"><h4></h4></div>
+            <div class="row">
+           <div class="control-label col-sm-4"><h4>Payment Message:</h4></div>
           <div class="col-sm-8">
-              <input type="hidden" name="state" class="form-control"placeholder="Enter Your State Name"required>
+              <input type="text" name="payment_message" class="form-control" placeholder="transaction code" required>
+
           </div>
         </div>
         </div>
+        <div class="form-group">
+            <div class="row">
+           <div class="control-label col-sm-4"><h4>Payment image:</h4></div>
+          <div class="col-sm-8">
+              <input type="file" name="img" class="form-control" placeholder="upload payment slip"required>
+
+          </div>
+        </div>
+        </div>
+        
+      
 
 		      <div class="form-group">
             <div class="row">
@@ -140,6 +156,8 @@ if(isset($savedata))
         </div>
         </div>
         </div>
+
+       
 
         <div class="col-sm-6">
     <div class="form-group">

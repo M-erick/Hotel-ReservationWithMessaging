@@ -12,6 +12,7 @@
 		<th>City</th>
 		<th>Package</th>
 		<th>Status</th>
+		<th>Payment_Image</th>
 		<th>Serial number</th>
 
 		<th>Update Status</th>
@@ -37,6 +38,8 @@ $oid=$res['id'];
 		<td><?php echo $res['package']; ?></td>
 
 		<td><?php echo $res['status']; ?></td>
+		<td><a href="../image/payments/<?php echo $res['payment_image']; ?>" target="_blank"><?php echo $res['payment_image']; ?></a></td>
+
 		<td><?php echo $res['serial_number']; ?></td>
 
 

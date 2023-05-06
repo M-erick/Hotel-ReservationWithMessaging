@@ -62,7 +62,9 @@ $count = mysqli_fetch_assoc($result)['count'];
     Feedback</a></li>
             
     <li><a href="dashboard.php?option=rooms"><i class="fa fa-home"> </i>Room</a></li>
-            <li><a href="dashboard.php?option=tours">Tour package</a></li>
+    <li><a href="dashboard.php?option=package"> </i>Package</a></li>
+
+     <li><a href="dashboard.php?option=tours">Tour Booking Details</a></li>
 			<li><a href="dashboard.php?option=booking_details">Booking Details</a></li>
       <li><a href="dashboard.php?option=user_registration">User Registration</a></li>
 			<li><a href="dashboard.php?option=slider">Slider</a></li>
@@ -122,6 +124,25 @@ else
   else if($opt=="update_room")
   {
     include('update_room.php');
+  }
+
+  else if($opt=="package")
+	{
+	include('package.php');	
+	}
+	
+	else if($opt=="add_package")
+	{
+	include('add_package.php');	
+	}
+	else if($opt=="delete_package")
+	{
+	include('delete_package.php');	
+	}
+  
+  else if($opt=="update_package")
+  {
+    include('update_package.php');
   }
 
   else if($opt=="tours")

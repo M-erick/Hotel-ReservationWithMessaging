@@ -50,7 +50,7 @@ if(isset($send)) {
           <input type="Email" name="e" value="<?php echo $eid; ?>" readonly class="form-control" id="#"placeholder="Email"required>
         </div>
         <div class="form-group">
-          <input type="Number" name="mob" class="form-control" id="#"placeholder="Mobile Number"required>
+          <input type="tel" name="mob" class="form-control" id="#" placeholder="phone number" pattern="0[0-9]{9}"  title="Please enter a 10-digit mobile number starting with 0" required>
         </div>
         <div class="form-group">
           <textarea type="Text" name="msg" class="form-control" id="#"placeholder="Type comment here"required></textarea>

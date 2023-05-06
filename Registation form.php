@@ -83,7 +83,7 @@ include('Menu Bar.php');
         <div class="form-group">
             <div class="control-label col-sm-5"><h4>Mobile No:</h4></div>
           <div class="col-sm-7">
-              <input type="text" name="mobi" class="form-control" pattern="0[0-9]{9}" title="Please enter a 10-digit mobile number starting with 0" required>
+              <input type="tel" name="mobi" class="form-control" pattern="0[0-9]{9}" title="Please enter a 10-digit mobile number starting with 0" required>
           </div>
         </div>
 

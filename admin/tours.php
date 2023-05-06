@@ -50,7 +50,7 @@ $oid=$res['id'];
 
 ?>	
 </table>
-<form method="post" action="generate_booking_pdf.php">
+<form method="post" action="generate_tours_booking_pdf.php">
     <button type="submit" name="download_pdf" class="btn btn-primary">
         <i class="fas fa-download"></i> Download PDF
     </button>

@@ -89,8 +89,9 @@ if(isset($savedata))
           <div class="row">
            <div class="control-label col-sm-4"><h4>Mobile :</h4></div>
           <div class="col-sm-8">
-              <input type="tel" value=""  class="form-control" name="phone" placeholder=" Phone Number" required >
+              <input type="tel" value=""  class="form-control" name="phone" pattern="0[0-9]{9}" title="Please enter a 10-digit mobile number starting with 0" required >
           </div>
+
         </div>
         </div>
 

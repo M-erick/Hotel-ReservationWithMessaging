@@ -27,7 +27,7 @@
 		<th>Name</th>
 		<th>Description</th>
         <th>Duration</th>
-        <th>Price</th>
+        <th>Price/ksh</th>
         <th>location</th>
 		<th>Update</th>
 		<th>Delete</th>
@@ -46,7 +46,17 @@ $path="../image/tours/$img";
 		<td><img src="<?php echo $path;?>" width="50" height="50"/></td>
         <td><?php echo $res['package_no']; ?></td>
         <td><?php echo $res['name']; ?></td>
-        <td><?php echo $res['description']; ?></td>
+        <td>
+           <ul>
+        <?php
+        $description = $res['description'];
+        $bulletPoints = explode("\n", $description);
+        foreach ($bulletPoints as $point) {
+            echo "<li>$point</li>";
+        }
+        ?>
+         </ul>
+      </td>
         <td><?php echo $res['duration']; ?></td>
 
 

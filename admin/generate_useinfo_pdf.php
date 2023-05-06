@@ -59,7 +59,7 @@ $pdf->Cell(0, 10, 'User Registration Details', 0, 1, 'C');
 $pdf->SetFont('times', '', 12);
 
 // Create a table
-$html = '<table border="1">
+$html = '<table border="1" cellpadding="5">
             <tr>
                 <th><strong>Sr No</strong></th>
                 <th><strong>Name</strong></th>

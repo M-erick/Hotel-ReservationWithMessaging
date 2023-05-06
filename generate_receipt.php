@@ -12,7 +12,11 @@ $result = mysqli_fetch_assoc($sql);
 
 
 // Generate a unique serial number
-$serial_number = bin2hex(random_bytes(16));
+$timestamp = date('YmdHis'); // Current date and time
+$random_digits = mt_rand(1000, 9999); // Random 4-digit number
+
+$serial_number = "E&M-$timestamp-$random_digits";
+
 
 // Save the serial number to the database
 mysqli_query($con, "UPDATE room_booking_details SET serial_number='$serial_number' WHERE id='$oid'");
@@ -56,6 +60,7 @@ $pdf->Cell(0, 20, '', 0, 1);
 // Add the receipt header
 $pdf->WriteHTML('<h1>Booking Receipt</h1><br>');
 // Add the booking details to the PDF
+$pdf->WriteHTML("<p><b>Serial_No:</b> {$serial_number}</p>");
 $pdf->WriteHTML("<p><b>Name:</b> {$result['name']}</p>");
 $pdf->WriteHTML("<p><b>Email:</b> {$result['email']}</p>");
 $pdf->WriteHTML("<p><b>Mobile Number:</b> {$result['phone']}</p>");

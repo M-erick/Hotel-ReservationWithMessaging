@@ -60,7 +60,7 @@ $pdf->Cell(0, 20, '', 0, 1);
 // Add the receipt header
 $pdf->WriteHTML('<h1> Tours Booking Receipt</h1><br>');
 // Add the booking details to the PDF
-$pdf->WriteHTML("<p><b>Serial_No:</b> {$result['serial_number']}</p>");
+$pdf->WriteHTML("<p><b>Serial_No:</b> {$serial_number}</p>");
 $pdf->WriteHTML("<p><b>Name:</b> {$result['name']}</p>");
 $pdf->WriteHTML("<p><b>Email:</b> {$result['email']}</p>");
 $pdf->WriteHTML("<p><b>Mobile Number:</b> {$result['phone']}</p>");

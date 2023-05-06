@@ -57,11 +57,10 @@ $pdf->Cell(0, 15, 'Room Booking Details', 0, 1, 'C');
 $pdf->SetFont('times', '', 12);
 
 // Create a table
-$html = '<table >
+$html = '<table border="1" cellpadding="5">
             <tr>
                 <th><strong>Sr No</strong></th>
                 <th><strong>Name</strong></th>
-                <th><strong>Email</strong></th>
                 <th><strong>Mobile Number</strong></th>
                 <th><strong>Room Type</strong></th>
                 <th><strong>Check in Date</strong></th>
@@ -81,7 +80,6 @@ while($res=mysqli_fetch_assoc($sql))
     $html .= '<tr>
                 <td>'. $i .'</td>
                 <td>'. $res['name'] .'</td>
-                <td>'. $res['email'] .'</td>
                 <td>'. $res['phone'] .'</td>
                 <td>'. $res['room_type'] .'</td>
                 <td>'. $res['check_in_date'] .'</td>

@@ -80,6 +80,8 @@ $count = mysqli_fetch_assoc($result)['count'];
         	<ul class="dropdown-menu">
           		<li><a href="profile.php">Profile</a></li>
               <li><a href="order.php">Booking Status</a></li>
+              <li><a href="tour_order.php">Tours Status</a></li>
+
               <li><a href="logout.php">Logout</a></li>
         	</ul>
         </li>

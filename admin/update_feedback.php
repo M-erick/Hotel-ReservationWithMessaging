@@ -12,14 +12,23 @@ if(isset($update))
 {
     mysqli_query($con,"UPDATE feedback SET response = '$response', response_time = CURRENT_TIMESTAMP, read_status = 0 WHERE id = '$id'");
     $success_message = "Your response was sent successfully.";
+    header('location:dashboard.php?option=feedback');
+
 } 
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link href="dashboard.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+ 
     <title>Reply Feedback</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <style>
         .container {
             max-width: 500px;
@@ -42,12 +51,38 @@ if(isset($update))
             border: 1px solid #c3e6cb;
             border-radius: 5px;
         }
+           /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+  
     </style>
 </head>
 <body>
-    <header>
-        <!-- Add header content here -->
-    </header>
+ 
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.php">Home</a>
+          <!-- <a href="../index.php"title="Home">Home</a> -->
+          <a class="navbar-brand" href="dashboard.php?option=feedback">Feedback</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="dashboard.php?option=admin_profile">Profile</a></li>
+
+            <li><a href="logout.php">Logout</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
     <div class="container">
         <h1>Reply Feedback</h1>
         <form method="post" enctype="multipart/form-data">

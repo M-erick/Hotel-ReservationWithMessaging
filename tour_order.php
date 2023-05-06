@@ -58,7 +58,7 @@ echo "<td>".$result['package']."</td>";
 echo "<td style='background-color: green; border-radius: 10px; background-clip: text; -webkit-background-clip: text; color: transparent;'>".$result['status']."</td>";
 
 if ($result['status']=== 'booked') {
-  echo "<td><a href='generate_receipt.php?torder_id=$oid' style='color:Red'>Receipt</a></td>";
+  echo "<td><a href='generate__tour_receipt.php?torder_id=$oid' style='color:Red'>Receipt</a></td>";
 } else {
   echo "<td style='color:gray'>Receipt</td>";
  

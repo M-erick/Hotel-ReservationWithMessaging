@@ -34,33 +34,33 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
     <div class="item active">
-      <img src="image/Delux-Room-Single-Bed-Ac-Room/delux_img1.jpg"class="img-responsive rounded mx-auto d-block" alt="img1">
+      <img src="image/tours/balloon.jpg"class="img-responsive rounded mx-auto d-block" alt="img1">
     </div>
 
     <div class="item">
-      <img src="image/Delux-Room-Single-Bed-Ac-Room/delux_img2.jpg"class="" alt="im2">
+      <img src="image/tours/cruise.jpg"class="" alt="im2">
     </div>
 
     <div class="item">
-       <img src="image/Delux-Room-Single-Bed-Ac-Room/delux_img3.jpg"class="" alt="im3">
+       <img src="image/tours/dolphin.jpg"class="" alt="im3">
     </div>
 
     <div class="item">
-       <img src="image/Delux-Room-Single-Bed-Ac-Room/delux_img4.jpg"class="" alt="img4">
+       <img src="image/tours/forest.jpg"class="" alt="img4">
     </div>
     <div class="item">
-       <img src="image/Delux-Room-Single-Bed-Ac-Room/delux_img5.jpg"class="" alt="img5">
-    </div>
-
-    <div class="item">
-       <img src="image/Delux-Room-Single-Bed-Ac-Room/delux_img6.jpg"class="" alt="img5">
+       <img src="image/tours/iamge03.jpg"class="" alt="img5">
     </div>
 
     <div class="item">
-       <img src="image/Delux-Room-Single-Bed-Ac-Room/delux_img7.jpg"class="" alt="img7">
+       <img src="image/tours/image01.jpg"class="" alt="img5">
+    </div>
+
+    <div class="item">
+       <img src="image/tours/image02.jpg"class="" alt="img7">
     </div>
     <div class="item">
-       <img src="image/Delux-Room-Single-Bed-Ac-Room/delux_img8.jpg"class="" alt="img7">
+       <img src="image/tours/image04jpg"class="" alt="img7">
     </div>
   </div>
 
@@ -83,15 +83,43 @@ $res=mysqli_fetch_assoc($sql);
 
 <br>
 		<h2 class=""><font color="#000000;" ><?php echo $res['name']; ?></font></h2>
-    <p class=""><font color="#000000;" >KSH <?php echo $res['price']; ?> per person</font></p>
+    <p class=""><b><font color="#000000;" >KSH <?php echo $res['price']; ?> per person</font></b></p>
 		<p class="text-justify">
       <?php echo $res['details']; ?>
 </p>
-    <div class="row">
-      <h2>Amenities & Facilities</h2>
-      <img src="image/icon/wifi.png"class="img-responsive">
-      <a href="Login.php" class="btn btn-info">Book Now</a><br><br>
+<div class="row">
+  <div class="col-sm-12">
+    <div class="my_card p-3 mb-3 border">
+      <div class="row">
+        
+        <div class="col-sm-6">
+          
+          <?php
+          // Split the text into an array of bullet points
+          $bulletPoints = explode("\n", $res['description']);
+
+           // Display the bullet points as an unordered list
+           echo "<ul>";
+             foreach ($bulletPoints as $bulletPoint) {
+             echo "<li>" . $bulletPoint . "</li>";
+              }
+            echo "</ul>";
+             ?>
+        </div>
       </div>
+    </div>
+
+    <div class="row">
+      <h2>Payments Methods</h2>
+      <img src="image/icon/payment.png"class="img-responsive">
+      <h2>Available option</h2>
+      <h4><b>Mpesa Pay Bill</b></h4>
+      <p>Business Number:<b>247247</b></p>
+      <p>Account Number:<b>0713649428</b></p>
+      <a href="hotelBooking.php" class="btn btn-info">Book Now</a><br><br>
+      </div>
+  </div>
+</div>
 	</div>
 				<div class="col-sm-3">
 					<div class="panel panel-primary">
@@ -107,8 +135,10 @@ $res=mysqli_fetch_assoc($sql);
            {
 
             ?>
-            <a href="room_details.php?room_id=<?php echo $result1['package_id']; ?>"><?php echo $result1['name']; ?></a><hr>
+            <a href="package_details.php?packagetoursage_id']; ?>"><?php echo $result1['name']; ?></a><hr>
+            
             <?php } ?>
+
     <!--Fatch Mysql Database Select Query Room Details -->
     					
 					</div>

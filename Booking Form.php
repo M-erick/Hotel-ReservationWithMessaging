@@ -24,12 +24,18 @@ if(isset($savedata))
   {
 
     $pending =  'pending';
-   $sql="insert into room_booking_details(name,email,phone,address,city,state,zip,contry,room_type,Occupancy,check_in_date,check_in_time,check_out_date,price,status) 
+    $img = $_FILES['img']['name'];
+
+   $sql="insert into room_booking_details(name,email,phone,address,city,state,zip,contry,room_type,Occupancy,check_in_date,check_in_time,check_out_date,payment_image,status) 
   values('$name','$email','$phone','$address','$city','$state','$zip','$country',
-  '$room_type','$Occupancy','$cdate','$ctime','$codate','$price',' $pending')";
+  '$room_type','$Occupancy','$cdate','$ctime','$codate','$img',' $pending')";
    if(mysqli_query($con,$sql))
    {
+    move_uploaded_file($_FILES['img']['tmp_name'], "image/payments/" .$_FILES['img']['name']);
    $msg= "<h1 style='color:blue'>You have Successfully booked this room</h1><h2><a href='order.php'>View </a></h2>"; 
+   } else {
+    $msg = "<h1 style='color:red'>Error inserting into database. Please try again.</h1>";
+
    }
    
   }
@@ -90,7 +96,7 @@ if(isset($savedata))
     <div class="row">
       <?php echo @$msg; ?>
       <!--Form Containe Start Here-->
-     <form class="form-horizontal" method="post">
+     <form class="form-horizontal" method="post" enctype="multipart/form-data">
        <div class="col-sm-6">
          <div class="form-group">
            <div class="row">
@@ -184,15 +190,18 @@ if(isset($savedata))
             </div>
           </div>
 
+         
+
           <div class="col-sm-6">
-            <div class="form-group">
-              <div class="row">
-                <div class="control-label col-sm-5"><h4>Price:</h4></div>
-                  <div class="col-sm-7">
-                  <input type="number" name="price"  id ="price" class="form-control"readonly>
-                  </div>
-              </div>
-            </div>
+          <div class="form-group">
+            <div class="row">
+           <div class="control-label col-sm-5"><h4>Payment image:</h4></div>
+          <div class="col-sm-7">
+              <input type="file" name="img" class="form-control" placeholder="upload payment slip"required>
+
+          </div>
+        </div>
+        </div>
           </div>
 
           <div class="col-sm-6">

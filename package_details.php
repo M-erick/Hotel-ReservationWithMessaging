@@ -60,7 +60,7 @@
        <img src="image/tours/image02.jpg"class="" alt="img7">
     </div>
     <div class="item">
-       <img src="image/tours/image04jpg"class="" alt="img7">
+       <img src="image/tours/image04.jpg"class="" alt="img7">
     </div>
   </div>
 
@@ -135,7 +135,7 @@ $res=mysqli_fetch_assoc($sql);
            {
 
             ?>
-            <a href="package_details.php?packagetoursage_id']; ?>"><?php echo $result1['name']; ?></a><hr>
+            <a href="package_details.php?package_id=<?php echo $result1['package_id']; ?>"><?php echo $result1['name']?></a><hr>
             
             <?php } ?>
 

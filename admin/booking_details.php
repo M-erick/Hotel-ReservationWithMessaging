@@ -15,6 +15,7 @@
 		<th>Check Out Date</th>
 		<th>Occupancy</th>
 		<th>Status</th>
+		<th>Payment_Image</th>
 		<th>Serial number</th>
 
 		<th>Update Status</th>
@@ -42,6 +43,8 @@ $oid=$res['id'];
 		<td><?php echo $res['check_out_date']; ?></td>
 		<td><?php echo $res['Occupancy']; ?></td>
 		<td><?php echo $res['status']; ?></td>
+		<td><a href="../image/payments/<?php echo $res['payment_image']; ?>" target="_blank"><?php echo $res['payment_image']; ?></a></td>
+
 		<td><?php echo $res['serial_number']; ?></td>
 
 

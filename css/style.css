@@ -142,3 +142,8 @@ box-shadow:5px 5px 5px #000408;
       text-align:center;
       size:15px;
     }
+
+    .rounded {
+      border-radius: 10px; /* Adjust the value to control the amount of rounding */
+      /* Other styles for the div */
+    }
